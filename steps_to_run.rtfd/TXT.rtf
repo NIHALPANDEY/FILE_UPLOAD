@@ -1,0 +1,126 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue254;\red0\green0\blue0;\red29\green0\blue255;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c99608;\cssrgb\c0\c0\c0;\cssrgb\c16471\c0\c100000;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh14900\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs48 \cf0 Create a virtualenv and install requirement.txt\
+\
+STEP 1. To  Create a user : Run the following command - python manage.py createsuperuser\
+\
+
+\fs24 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2023-04-06 at 2.48.53 AM.png \width12960 \height4100 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\
+\
+\
+\
+\
+
+\fs48 STEP 2 : To Start the Server: Run the command - python manage.py runserver\
+\
+
+\fs24 \
+
+\fs48 STEP 3: Generate Token to Use apis: Hit get token api 
+\fs24 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs36 \cf0 Curl to generate Token:
+\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs28 \cf0  
+\f1 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 curl --location --request POST \cf4 \strokec4 'localhost:8000/get_token'\cf0 \strokec3  \\\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 --header \cf4 \strokec4 'Content-Type: application/json'\cf0 \strokec3  \\\cb1 \
+\cb2 --data-raw \cf4 \strokec4 '\{\cf0 \cb1 \strokec3 \
+\cb2     \cf4 \strokec4 "username"\cf0 \strokec3 : \cf4 \strokec4 "admin"\cf0 \strokec3 ,\cb1 \
+\cb2     \cf4 \strokec4 "password"\cf0 \strokec3 : \cf4 \strokec4 "admin"\cf0 \cb1 \strokec3 \
+\cb2 \}\cf4 \strokec4 '
+\fs24 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 \strokec3 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {{\NeXTGraphic Screenshot 2023-04-06 at 2.51.31 AM.png \width17360 \height9900 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\
+\
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs48 \cf0 STEP 4: Paste the token in Authorization header and Hit the API to get list of all files.\
+\
+Curl to get all files:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs28 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 curl --location --request GET \cf4 \strokec4 'localhost:8000/upload/'\cf0 \strokec3  \\\cb1 \
+\cb2 --header \cf4 \strokec4 'Authorization: Token 11eff414504d437c1e6aaf08f9d86763a0069545'\cf0 \strokec3  \\\cb1 \
+\cb2 --header \cf4 \strokec4 'Content-Type: text/plain'\cf0 \strokec3  \\\cb1 \
+\cb2 --data-binary \cf4 \strokec4 '@'\cf0 \cb1 \strokec3 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs48 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf0 {{\NeXTGraphic Screenshot 2023-04-06 at 3.05.07 AM.png \width17360 \height12180 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs48 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs48 \cf0 STEP 5: To Save a File hit the api with following parameters:\
+\
+Curl to save a file:\
+
+\fs28 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf0 \cb2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 curl --location --request POST \cf4 \strokec4 'localhost:8000/upload/'\cf0 \strokec3  \\\cb1 \
+\cb2 --header \cf4 \strokec4 'Authorization: Token 11eff414504d437c1e6aaf08f9d86763a0069545'\cf0 \strokec3  \\\cb1 \
+\cb2 --form \cf4 \strokec4 'filename="Testing"'\cf0 \strokec3  \\\cb1 \
+\cb2 --form \cf4 \strokec4 'document=@"/Users/nihalpandey/Downloads/cancel cheque.jpeg"'\cf0 \strokec3  \\\cb1 \
+\cb2 --form \cf4 \strokec4 'user="1"'
+\fs24 \cf0 \cb1 \strokec3 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs48 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs24 \cf0 {{\NeXTGraphic Screenshot 2023-04-06 at 3.01.29 AM.png \width17360 \height12180 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+}
